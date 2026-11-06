@@ -1,0 +1,167 @@
+{
+ "commands": [
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "rohr_d",
+    "expression": "100 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "linienbreite",
+    "expression": "0.62 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "wandlinien",
+    "expression": "3",
+    "unit": ""
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "wand",
+    "expression": "linienbreite * wandlinien",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "spiel",
+    "expression": "0.15 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "verpressung",
+    "expression": "0.4 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_spiel",
+    "expression": "0.2 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "ring_h",
+    "expression": "5 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "ring_s",
+    "expression": "2.5 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "einsteck",
+    "expression": "30 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_a",
+    "expression": "4 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_b",
+    "expression": "ring_h + nut_spiel",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "fase_m",
+    "expression": "1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "fase_s",
+    "expression": "1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "muffe_bohrung",
+    "expression": "rohr_d + 2 * spiel",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_d",
+    "expression": "rohr_d - 2 * verpressung + 2 * ring_s",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "muffe_d",
+    "expression": "nut_d + 2 * wand",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "name": "Ring",
+    "body_name": "Dichtring",
+    "diameter": "nut_d",
+    "height": "ring_h",
+    "operation": "new"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "name": "RingBohrung",
+    "diameter": "rohr_d - 2 * verpressung",
+    "height": "ring_h + 2",
+    "base": [
+     0,
+     0,
+     -1
+    ],
+    "operation": "cut",
+    "targets": [
+     "Dichtring"
+    ]
+   }
+  }
+ ]
+}

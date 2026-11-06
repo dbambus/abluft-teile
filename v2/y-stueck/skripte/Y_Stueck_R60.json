@@ -1,0 +1,818 @@
+{
+ "commands": [
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "t",
+    "expression": "4 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "riser",
+    "expression": "6 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "R",
+    "expression": "60 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "flansch",
+    "expression": "104 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "lochkreis",
+    "expression": "88.9 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "rohr_d",
+    "expression": "75 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "linienbreite",
+    "expression": "0.62 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "wandlinien",
+    "expression": "3",
+    "unit": ""
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "wand",
+    "expression": "linienbreite * wandlinien",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "spiel",
+    "expression": "0.15 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "verpressung",
+    "expression": "0.4 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_spiel",
+    "expression": "0.2 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "ring_h",
+    "expression": "5 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "ring_s",
+    "expression": "2.5 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "einsteck",
+    "expression": "30 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_a",
+    "expression": "4 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_b",
+    "expression": "ring_h + nut_spiel",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "fase_m",
+    "expression": "1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "fase_s",
+    "expression": "1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "bohrung",
+    "expression": "rohr_d - 2 * wand",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "einlauf",
+    "expression": "(76.2 mm - bohrung) / 2",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "H",
+    "expression": "t + riser + R",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "L45",
+    "expression": "R * (1 - sin(45 deg)) / cos(45 deg)",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "xj",
+    "expression": "R * (1 - cos(45 deg)) + L45 * sin(45 deg)",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "mix",
+    "expression": "-35 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "xc",
+    "expression": "xj + mix",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "links",
+    "expression": "40 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "xL",
+    "expression": "-links - einsteck",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "konus_l",
+    "expression": "100 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "aus_d",
+    "expression": "100 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "aus_l",
+    "expression": "einsteck + 5 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "aus_innen",
+    "expression": "aus_d - 2 * wand",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "xe",
+    "expression": "xc + konus_l + aus_l",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "haupt_d",
+    "expression": "rohr_d + 1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "haupt_bohrung",
+    "expression": "bohrung + 1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "muffe_bohrung",
+    "expression": "rohr_d + 2 * spiel",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "nut_d",
+    "expression": "rohr_d - 2 * verpressung + 2 * ring_s",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "muffe_d",
+    "expression": "nut_d + 2 * wand",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "name": "Flansch",
+    "body_name": "Y",
+    "diameter": "flansch",
+    "height": "t",
+    "operation": "new"
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": {
+     "origin": [
+      0,
+      0,
+      0
+     ],
+     "x_dir": [
+      1,
+      0,
+      0
+     ],
+     "y_dir": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "ZulaufPfadSk"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      0,
+      "t - 1"
+     ],
+     [
+      0,
+      "t + riser"
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.center_point",
+   "params": {
+    "center": [
+     "R",
+     "t + riser"
+    ],
+    "start": [
+     0,
+     "t + riser"
+    ],
+    "sweep": -45
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     "a1.end",
+     [
+      "xj",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": "XY",
+    "offset": "t - 1",
+    "name": "ZulaufProfilSk"
+   }
+  },
+  {
+   "command": "sketch.circle.center",
+   "params": {
+    "center": [
+     0,
+     0
+    ],
+    "diameter": "rohr_d"
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.sweep",
+   "params": {
+    "name": "Zulauf",
+    "sketch": "ZulaufProfilSk",
+    "path_sketch": "ZulaufPfadSk",
+    "path": [
+     "l1",
+     "a1",
+     "l2"
+    ],
+    "operation": "join",
+    "targets": [
+     "Y"
+    ]
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": {
+     "origin": [
+      0,
+      0,
+      0
+     ],
+     "x_dir": [
+      1,
+      0,
+      0
+     ],
+     "y_dir": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "HauptSk"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      "xL - 5",
+      "H"
+     ],
+     [
+      "xe + 5",
+      "H"
+     ]
+    ],
+    "construction": true
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "closed": true,
+    "points": [
+     [
+      "xL",
+      "H"
+     ],
+     [
+      "xL",
+      "H + muffe_d / 2"
+     ],
+     [
+      "xL + (einsteck)",
+      "H + (muffe_d / 2)"
+     ],
+     [
+      "xL + (einsteck + muffe_d / 2 - haupt_d / 2)",
+      "H + (haupt_d / 2)"
+     ],
+     [
+      "xc",
+      "H + haupt_d / 2"
+     ],
+     [
+      "xc + konus_l",
+      "H + aus_d / 2"
+     ],
+     [
+      "xe - fase_s",
+      "H + aus_d / 2"
+     ],
+     [
+      "xe",
+      "H + aus_d / 2 - fase_s"
+     ],
+     [
+      "xe",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.revolve",
+   "params": {
+    "name": "Hauptleitung",
+    "sketch": "HauptSk",
+    "axis": "l1",
+    "angle": "360 deg",
+    "operation": "join",
+    "targets": [
+     "Y"
+    ]
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": {
+     "origin": [
+      0,
+      0,
+      0
+     ],
+     "x_dir": [
+      1,
+      0,
+      0
+     ],
+     "y_dir": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "ZulaufBohrungPfadSk"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      0,
+      "-1"
+     ],
+     [
+      0,
+      "t + riser"
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.arc.center_point",
+   "params": {
+    "center": [
+     "R",
+     "t + riser"
+    ],
+    "start": [
+     0,
+     "t + riser"
+    ],
+    "sweep": -45
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     "a1.end",
+     [
+      "xj",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": "XY",
+    "offset": "-1",
+    "name": "ZulaufBohrungProfilSk"
+   }
+  },
+  {
+   "command": "sketch.circle.center",
+   "params": {
+    "center": [
+     0,
+     0
+    ],
+    "diameter": "bohrung"
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.sweep",
+   "params": {
+    "name": "ZulaufBohrung",
+    "sketch": "ZulaufBohrungProfilSk",
+    "path_sketch": "ZulaufBohrungPfadSk",
+    "path": [
+     "l1",
+     "a1",
+     "l2"
+    ],
+    "operation": "cut",
+    "targets": [
+     "Y"
+    ]
+   }
+  },
+  {
+   "command": "sketch.create",
+   "params": {
+    "plane": {
+     "origin": [
+      0,
+      0,
+      0
+     ],
+     "x_dir": [
+      1,
+      0,
+      0
+     ],
+     "y_dir": [
+      0,
+      0,
+      1
+     ]
+    },
+    "name": "HauptBohrSk"
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "points": [
+     [
+      "xL - 5",
+      "H"
+     ],
+     [
+      "xe + 5",
+      "H"
+     ]
+    ],
+    "construction": true
+   }
+  },
+  {
+   "command": "sketch.line",
+   "params": {
+    "closed": true,
+    "points": [
+     [
+      "xL - 1",
+      "H"
+     ],
+     [
+      "xL + (0 - 1)",
+      "H + (muffe_bohrung / 2 + fase_m + 1)"
+     ],
+     [
+      "xL + (0 + fase_m)",
+      "H + (muffe_bohrung / 2)"
+     ],
+     [
+      "xL + (0 + nut_a)",
+      "H + (muffe_bohrung / 2)"
+     ],
+     [
+      "xL + (0 + nut_a)",
+      "H + (nut_d / 2)"
+     ],
+     [
+      "xL + (0 + nut_a + nut_b)",
+      "H + (nut_d / 2)"
+     ],
+     [
+      "xL + (0 + nut_a + nut_b)",
+      "H + (muffe_bohrung / 2)"
+     ],
+     [
+      "xL + (0 + einsteck)",
+      "H + (muffe_bohrung / 2)"
+     ],
+     [
+      "xL + (0 + einsteck + muffe_bohrung / 2 - haupt_bohrung / 2)",
+      "H + (haupt_bohrung / 2)"
+     ],
+     [
+      "xc",
+      "H + haupt_bohrung / 2"
+     ],
+     [
+      "xc + konus_l",
+      "H + aus_innen / 2"
+     ],
+     [
+      "xe + 1",
+      "H + aus_innen / 2"
+     ],
+     [
+      "xe + 1",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "command": "sketch.finish",
+   "params": {}
+  },
+  {
+   "command": "solid.revolve",
+   "params": {
+    "name": "HauptBohrung",
+    "sketch": "HauptBohrSk",
+    "axis": "l1",
+    "angle": "360 deg",
+    "operation": "cut",
+    "targets": [
+     "Y"
+    ]
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "name": "Schraubloch",
+    "diameter": "4.5 mm",
+    "height": "t + 2",
+    "base": [
+     "lochkreis / 2",
+     0,
+     -1
+    ],
+    "operation": "cut",
+    "targets": [
+     "Y"
+    ]
+   }
+  },
+  {
+   "command": "solid.pattern.circular",
+   "params": {
+    "name": "Schraubloecher",
+    "features": [
+     "Schraubloch"
+    ],
+    "axis": "Z",
+    "count": 4
+   }
+  },
+  {
+   "command": "solid.chamfer",
+   "params": {
+    "name": "FlanschFase",
+    "edges": [
+     [
+      0,
+      -52,
+      4
+     ]
+    ],
+    "distance": "1 mm"
+   }
+  },
+  {
+   "command": "solid.chamfer",
+   "params": {
+    "name": "RiserFase",
+    "edges": [
+     [
+      0,
+      -37.5,
+      4
+     ]
+    ],
+    "distance": "2 mm"
+   }
+  },
+  {
+   "command": "solid.chamfer",
+   "params": {
+    "name": "EinlaufFase",
+    "edges": [
+     [
+      0,
+      -35.64,
+      0
+     ]
+    ],
+    "distance": "einlauf"
+   }
+  }
+ ]
+}

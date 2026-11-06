@@ -1,5 +1,7 @@
 # Abluft-Teile (SolidCraft, FDM)
 
+**Neu: [`v2/`](v2/) mit Steckmuffe und TPU-Dichtring statt Gewinde, alle Teile druckbar, Toleranzen per Skript einstellbar.** Unten die v1 mit Gewinde M75×2.
+
 Parametrische Teile für ein Ø75-Abluftsystem mit M75×2-Gewinde.
 
 | Ordner | Inhalt |
