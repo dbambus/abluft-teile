@@ -1,0 +1,234 @@
+{
+ "commands": [
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "abstand",
+    "expression": "590 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "H",
+    "expression": "70 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "rohr_l",
+    "expression": "250 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "bogen_spitz",
+    "expression": "95 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "y_muffe",
+    "expression": "70 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "ring_s0",
+    "expression": "4.1 mm",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "e_mittel",
+    "expression": "(2 * rohr_l + bogen_spitz + y_muffe - abstand) / 3",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "e1",
+    "expression": "e_mittel",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "e2",
+    "expression": "e_mittel",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "x_r1",
+    "expression": "bogen_spitz - e1",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "x_r2",
+    "expression": "x_r1 + rohr_l - e2",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "e3",
+    "expression": "x_r2 + rohr_l - (abstand - y_muffe)",
+    "unit": "mm"
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "../bogen/Bogen_75_R60.sc",
+    "name": "Bogen_R60"
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "../y-stueck/Y_Stueck_R60.sc",
+    "name": "Y_R60",
+    "matrix": [
+     1,
+     0,
+     0,
+     "abstand",
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ]
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "Rohr_250_D75_E40.sc",
+    "name": "Rohr_1",
+    "matrix": [
+     0,
+     0,
+     1,
+     "x_r1",
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     "H"
+    ]
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "Rohr_250_D75_E40.sc",
+    "name": "Rohr_2",
+    "matrix": [
+     0,
+     0,
+     1,
+     "x_r2",
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     "H"
+    ],
+    "reuse": true
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "../dichtring/Dichtring_D75_TPU.sc",
+    "name": "Dichtring",
+    "matrix": [
+     0,
+     0,
+     1,
+     "x_r1 + ring_s0",
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     "H"
+    ]
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "../dichtring/Dichtring_D75_TPU.sc",
+    "matrix": [
+     0,
+     0,
+     1,
+     "x_r2 + ring_s0",
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     "H"
+    ],
+    "reuse": true
+   }
+  },
+  {
+   "command": "component.insert_design",
+   "params": {
+    "path": "../dichtring/Dichtring_D75_TPU.sc",
+    "matrix": [
+     0,
+     0,
+     1,
+     "abstand - y_muffe + ring_s0",
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     0,
+     "H"
+    ],
+    "reuse": true
+   }
+  }
+ ]
+}
